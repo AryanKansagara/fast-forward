@@ -1,0 +1,6 @@
+[project]
+name = "fast-forward-lab"
+version = "0.1.0"
+description = "Budgeted candidate patch racing laboratory with real verification"
+requires-python = ">=3.11"
+dependencies = []
