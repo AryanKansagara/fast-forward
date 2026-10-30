@@ -1,0 +1,191 @@
+{
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39"
+  },
+  "fixture": "normalize-unique-sort-v1",
+  "notice": "Synthetic inference and tokens; actual worktrees, Python execution, verification and elapsed time.",
+  "runs": [
+    {
+      "schema_version": 1,
+      "provider": "deterministic-fixture",
+      "inference_is_synthetic": true,
+      "mode": "serial",
+      "base_commit": "5057c5353edbfd3c976f95a2078368661df8712d",
+      "winner": "slow-valid",
+      "elapsed_seconds": 0.538254,
+      "synthetic_reserved_tokens": 200,
+      "synthetic_estimated_microdollars": 400,
+      "budget_policy": "All launched candidates charged full synthetic reservation, including cancelled work",
+      "results": [
+        {
+          "name": "plausible-wrong",
+          "status": "failed"
+        },
+        {
+          "name": "slow-valid",
+          "status": "passed",
+          "patch_diff": "diff --git a/solution.py b/solution.py\nindex 46366b0..063d85d 100644\n--- a/solution.py\n+++ b/solution.py\n@@ -1,2 +1,2 @@\n def normalize(values):\n-    return values\n+    return sorted(set(values))"
+        }
+      ],
+      "events": [
+        {
+          "at_seconds": 0.001147,
+          "kind": "reserved",
+          "candidate": "plausible-wrong",
+          "synthetic_tokens": 100
+        },
+        {
+          "at_seconds": 0.00134,
+          "kind": "started",
+          "candidate": "plausible-wrong"
+        },
+        {
+          "at_seconds": 0.088206,
+          "kind": "patch-applied",
+          "candidate": "plausible-wrong"
+        },
+        {
+          "at_seconds": 0.111585,
+          "kind": "finished",
+          "candidate": "plausible-wrong",
+          "status": "failed"
+        },
+        {
+          "at_seconds": 0.11181,
+          "kind": "reserved",
+          "candidate": "slow-valid",
+          "synthetic_tokens": 100
+        },
+        {
+          "at_seconds": 0.111917,
+          "kind": "started",
+          "candidate": "slow-valid"
+        },
+        {
+          "at_seconds": 0.518236,
+          "kind": "patch-applied",
+          "candidate": "slow-valid"
+        },
+        {
+          "at_seconds": 0.5364,
+          "kind": "verified",
+          "candidate": "slow-valid"
+        },
+        {
+          "at_seconds": 0.537928,
+          "kind": "finished",
+          "candidate": "slow-valid",
+          "status": "passed"
+        },
+        {
+          "at_seconds": 0.538018,
+          "kind": "winner",
+          "candidate": "slow-valid"
+        }
+      ],
+      "worktrees_remaining": 1
+    },
+    {
+      "schema_version": 1,
+      "provider": "deterministic-fixture",
+      "inference_is_synthetic": true,
+      "mode": "race",
+      "base_commit": "5057c5353edbfd3c976f95a2078368661df8712d",
+      "winner": "fast-valid",
+      "elapsed_seconds": 0.160943,
+      "synthetic_reserved_tokens": 300,
+      "synthetic_estimated_microdollars": 600,
+      "budget_policy": "All launched candidates charged full synthetic reservation, including cancelled work",
+      "results": [
+        {
+          "name": "plausible-wrong",
+          "status": "failed"
+        },
+        {
+          "name": "fast-valid",
+          "status": "passed",
+          "patch_diff": "diff --git a/solution.py b/solution.py\nindex 46366b0..16c1a13 100644\n--- a/solution.py\n+++ b/solution.py\n@@ -1,2 +1,2 @@\n def normalize(values):\n-    return values\n+    return list(sorted(set(values)))"
+        },
+        {
+          "name": "slow-valid",
+          "status": "cancelled"
+        }
+      ],
+      "events": [
+        {
+          "at_seconds": 0.000277,
+          "kind": "reserved",
+          "candidate": "plausible-wrong",
+          "synthetic_tokens": 100
+        },
+        {
+          "at_seconds": 0.000518,
+          "kind": "started",
+          "candidate": "plausible-wrong"
+        },
+        {
+          "at_seconds": 0.006402,
+          "kind": "reserved",
+          "candidate": "slow-valid",
+          "synthetic_tokens": 100
+        },
+        {
+          "at_seconds": 0.006581,
+          "kind": "started",
+          "candidate": "slow-valid"
+        },
+        {
+          "at_seconds": 0.011866,
+          "kind": "reserved",
+          "candidate": "fast-valid",
+          "synthetic_tokens": 100
+        },
+        {
+          "at_seconds": 0.012092,
+          "kind": "started",
+          "candidate": "fast-valid"
+        },
+        {
+          "at_seconds": 0.086778,
+          "kind": "patch-applied",
+          "candidate": "plausible-wrong"
+        },
+        {
+          "at_seconds": 0.104486,
+          "kind": "finished",
+          "candidate": "plausible-wrong",
+          "status": "failed"
+        },
+        {
+          "at_seconds": 0.138378,
+          "kind": "patch-applied",
+          "candidate": "fast-valid"
+        },
+        {
+          "at_seconds": 0.156337,
+          "kind": "verified",
+          "candidate": "fast-valid"
+        },
+        {
+          "at_seconds": 0.158044,
+          "kind": "finished",
+          "candidate": "fast-valid",
+          "status": "passed"
+        },
+        {
+          "at_seconds": 0.158129,
+          "kind": "winner",
+          "candidate": "fast-valid"
+        },
+        {
+          "at_seconds": 0.160487,
+          "kind": "finished",
+          "candidate": "slow-valid",
+          "status": "cancelled"
+        }
+      ],
+      "worktrees_remaining": 1
+    }
+  ]
+}
