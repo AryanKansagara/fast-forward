@@ -1,0 +1,64 @@
+{
+  "records": [
+    {
+      "schema_version": 1,
+      "provider": "deterministic-fixture",
+      "transport_kind": "fixture",
+      "requested_model": null,
+      "reported_model": null,
+      "status": "accepted",
+      "candidate": {
+        "path": "solution.py",
+        "source": "def normalize(values):\n    return sorted(values)\n"
+      },
+      "usage": {
+        "prompt_tokens": 50,
+        "completion_tokens": 50,
+        "total_tokens": 100
+      },
+      "usage_kind": "synthetic",
+      "generation_elapsed_seconds": 0.08,
+      "execution": "not_executed"
+    },
+    {
+      "schema_version": 1,
+      "provider": "deterministic-fixture",
+      "transport_kind": "fixture",
+      "requested_model": null,
+      "reported_model": null,
+      "status": "accepted",
+      "candidate": {
+        "path": "solution.py",
+        "source": "def normalize(values):\n    return sorted(set(values))\n"
+      },
+      "usage": {
+        "prompt_tokens": 50,
+        "completion_tokens": 50,
+        "total_tokens": 100
+      },
+      "usage_kind": "synthetic",
+      "generation_elapsed_seconds": 0.4,
+      "execution": "not_executed"
+    },
+    {
+      "schema_version": 1,
+      "provider": "deterministic-fixture",
+      "transport_kind": "fixture",
+      "requested_model": null,
+      "reported_model": null,
+      "status": "accepted",
+      "candidate": {
+        "path": "solution.py",
+        "source": "def normalize(values):\n    return list(sorted(set(values)))\n"
+      },
+      "usage": {
+        "prompt_tokens": 50,
+        "completion_tokens": 50,
+        "total_tokens": 100
+      },
+      "usage_kind": "synthetic",
+      "generation_elapsed_seconds": 0.12,
+      "execution": "not_executed"
+    }
+  ]
+}

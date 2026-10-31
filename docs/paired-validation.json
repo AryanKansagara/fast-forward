@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "phase": "paired_recorded_candidate_validation",
+  "candidate_bundle_sha256": "0fb16bacbc0e16d0883b1ed8520a69ab1fcd2ef3c94fe6453b2dbd43167c94d5",
+  "base_commit": "9836945516571497722ae67b60ca22d5e9c07b62",
+  "generation_accounting_once": {
+    "schema_version": 1,
+    "record_count": 3,
+    "accepted_candidates": 3,
+    "usage_by_provenance": {
+      "synthetic": {
+        "records": 3,
+        "prompt_tokens": 150,
+        "completion_tokens": 150,
+        "total_tokens": 300
+      }
+    },
+    "unknown_usage_records": 0,
+    "prior_generation_timing_by_origin": {
+      "fixture": {
+        "records": 3,
+        "seconds_sum": 0.6,
+        "semantics": "scripted synthetic delay"
+      }
+    },
+    "generation_timing_semantics": "Prior timings grouped by origin; synthetic scripted delays are not client measurements. Sums are not parallel critical paths or newly measured end-to-end times.",
+    "origin_claims": [
+      "deterministic-fixture:fixture"
+    ],
+    "provenance_warning": "Recording metadata is self-reported, not independently authenticated; mock/synthetic usage is not live inference evidence",
+    "candidate_execution": "none",
+    "cost": "not_estimated_without_versioned_pricing",
+    "usage_coverage": "All supplied records, including failed generations and losing candidates; unknown usage is never treated as zero"
+  },
+  "runs": [
+    {
+      "schema_version": 1,
+      "mode": "serial",
+      "base_commit": "9836945516571497722ae67b60ca22d5e9c07b62",
+      "winner": "record-1",
+      "results": [
+        {
+          "name": "record-0",
+          "status": "failed"
+        },
+        {
+          "name": "record-1",
+          "status": "passed",
+          "patch_diff": "diff --git a/solution.py b/solution.py\nindex 46366b0..063d85d 100644\n--- a/solution.py\n+++ b/solution.py\n@@ -1,2 +1,2 @@\n def normalize(values):\n-    return values\n+    return sorted(set(values))"
+        }
+      ],
+      "events": [
+        {
+          "at_seconds": 0.001051,
+          "kind": "validation-admitted",
+          "candidate": "record-0"
+        },
+        {
+          "at_seconds": 0.001299,
+          "kind": "started",
+          "candidate": "record-0"
+        },
+        {
+          "at_seconds": 0.006309,
+          "kind": "patch-applied",
+          "candidate": "record-0"
+        },
+        {
+          "at_seconds": 0.023855,
+          "kind": "finished",
+          "candidate": "record-0",
+          "status": "failed"
+        },
+        {
+          "at_seconds": 0.023952,
+          "kind": "validation-admitted",
+          "candidate": "record-1"
+        },
+        {
+          "at_seconds": 0.024011,
+          "kind": "started",
+          "candidate": "record-1"
+        },
+        {
+          "at_seconds": 0.028366,
+          "kind": "patch-applied",
+          "candidate": "record-1"
+        },
+        {
+          "at_seconds": 0.04606,
+          "kind": "verified",
+          "candidate": "record-1"
+        },
+        {
+          "at_seconds": 0.047723,
+          "kind": "finished",
+          "candidate": "record-1",
+          "status": "passed"
+        },
+        {
+          "at_seconds": 0.047797,
+          "kind": "winner",
+          "candidate": "record-1"
+        }
+      ],
+      "worktrees_remaining": 1,
+      "validation_elapsed_seconds": 0.047976,
+      "candidate_bundle_sha256": "0fb16bacbc0e16d0883b1ed8520a69ab1fcd2ef3c94fe6453b2dbd43167c94d5",
+      "candidate_generation_executed": false
+    },
+    {
+      "schema_version": 1,
+      "mode": "race",
+      "base_commit": "9836945516571497722ae67b60ca22d5e9c07b62",
+      "winner": "record-2",
+      "results": [
+        {
+          "name": "record-0",
+          "status": "failed"
+        },
+        {
+          "name": "record-2",
+          "status": "passed",
+          "patch_diff": "diff --git a/solution.py b/solution.py\nindex 46366b0..16c1a13 100644\n--- a/solution.py\n+++ b/solution.py\n@@ -1,2 +1,2 @@\n def normalize(values):\n-    return values\n+    return list(sorted(set(values)))"
+        },
+        {
+          "name": "record-1",
+          "status": "passed",
+          "patch_diff": "diff --git a/solution.py b/solution.py\nindex 46366b0..063d85d 100644\n--- a/solution.py\n+++ b/solution.py\n@@ -1,2 +1,2 @@\n def normalize(values):\n-    return values\n+    return sorted(set(values))"
+        }
+      ],
+      "events": [
+        {
+          "at_seconds": 0.00027,
+          "kind": "validation-admitted",
+          "candidate": "record-0"
+        },
+        {
+          "at_seconds": 0.000403,
+          "kind": "started",
+          "candidate": "record-0"
+        },
+        {
+          "at_seconds": 0.005683,
+          "kind": "validation-admitted",
+          "candidate": "record-1"
+        },
+        {
+          "at_seconds": 0.005854,
+          "kind": "started",
+          "candidate": "record-1"
+        },
+        {
+          "at_seconds": 0.0104,
+          "kind": "validation-admitted",
+          "candidate": "record-2"
+        },
+        {
+          "at_seconds": 0.010672,
+          "kind": "patch-applied",
+          "candidate": "record-0"
+        },
+        {
+          "at_seconds": 0.010743,
+          "kind": "started",
+          "candidate": "record-2"
+        },
+        {
+          "at_seconds": 0.015657,
+          "kind": "patch-applied",
+          "candidate": "record-1"
+        },
+        {
+          "at_seconds": 0.015845,
+          "kind": "patch-applied",
+          "candidate": "record-2"
+        },
+        {
+          "at_seconds": 0.028756,
+          "kind": "finished",
+          "candidate": "record-0",
+          "status": "failed"
+        },
+        {
+          "at_seconds": 0.033779,
+          "kind": "verified",
+          "candidate": "record-2"
+        },
+        {
+          "at_seconds": 0.035489,
+          "kind": "finished",
+          "candidate": "record-2",
+          "status": "passed"
+        },
+        {
+          "at_seconds": 0.035525,
+          "kind": "verified",
+          "candidate": "record-1"
+        },
+        {
+          "at_seconds": 0.037515,
+          "kind": "finished",
+          "candidate": "record-1",
+          "status": "passed"
+        },
+        {
+          "at_seconds": 0.037536,
+          "kind": "winner",
+          "candidate": "record-2"
+        }
+      ],
+      "worktrees_remaining": 1,
+      "validation_elapsed_seconds": 0.037916,
+      "candidate_bundle_sha256": "0fb16bacbc0e16d0883b1ed8520a69ab1fcd2ef3c94fe6453b2dbd43167c94d5",
+      "candidate_generation_executed": false
+    }
+  ],
+  "comparison_scope": "Identical prerecorded authored patches and verifier; generation delays are not replayed. Validation timings include worktree setup and cleanup.",
+  "end_to_end_inference_speedup": "not_measured"
+}

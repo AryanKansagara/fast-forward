@@ -26,7 +26,14 @@ Cerebras documents strict schemas, multi-turn calls, and parallel tool calling f
 - https://inference-docs.cerebras.ai/support/rate-limits
 - https://git-scm.com/docs/git-worktree
 
-No API calls are implemented or required in this release. A later adapter needs a securely configured key, model entitlement, network reachability, and a spend budget. Candidate environments must never inherit that key.
+The generation-only adapter now implements the fixed HTTPS endpoint; all verification so far uses offline mocks and synthetic recordings. A real call needs a securely configured key, model entitlement, network reachability, and authorized spend. Candidate environments must never inherit that key. Generated source is quarantined and cannot be executed by the adapter or safe viewer.
+
+Provider contract rechecked October 31, 2026 against the official pages below: strict structured output uses `response_format.json_schema.strict: true`, every object schema sets `additionalProperties: false`, `max_completion_tokens` caps completion (including reasoning), and usage includes `prompt_tokens`, `completion_tokens`, and `total_tokens`. The model is explicitly supplied at runtime rather than assuming an evergreen model identifier. Local byte and token caps are implementation limits, not advertised provider limits.
+
+- https://inference-docs.cerebras.ai/capabilities/structured-outputs
+- https://inference-docs.cerebras.ai/api-reference/chat-completions
+
+The paired replay track isolates local validation from prior generation: one prerecorded bundle, one pinned base, serial and race validators, all supplied usage counted once by provenance. It only executes exact authored fixture strings. Imported provenance is self-reported; no checked-in report represents an authenticated live-provider benchmark.
 
 ## Implemented architecture
 
